@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet Shirt App</title>
+    <!--Inserting font awsome-->
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" 
+    crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!--Inserting google font-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" 
+    rel="stylesheet">
+    <!--Inserting css files-->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/actionbar.css">
+    <link rel="stylesheet" href="css/newFileDialog.css">
+    <!--Inserting js files-->
+    <script src="javascript/file.js" defer></script>
+    <script src="javascript/backgroundShapes.js" defer></script>
+    <script src="javascript/mainCanvas.js" defer></script>
+    <script src="javascript/updateActionBar.js" defer></script>
+    <script src="javascript/main.js" defer></script>
+</head>
+<body>
+    <!--Wrapper Container-->
+    <section id="wrapper">
+        <!--Title of App Container-->
+        <div id="titleDiv">
+            <h1>Tweet Shirt App</h1>
+        </div>
+        <!--Action Bar Container-->
+        <div id="actionbarDiv">
+            <div id="newFile">
+                <button id="newFileButton" type="button">
+                    <i id="newFileButtonIcon" class="far fa-file-image fa-5x"></i>
+                </button>
+            </div>
+            <div id="canvasBackground">
+                <p>
+                    <label for="backgroundColor">Background Color</label>
+                    <input type="color" name="" id="backgroundColor" value="#F1F5FE">
+                </p>
+                <p>
+                    <label for="backgroundShape">Background Shape</label>
+                    <select name="" id="backgroundShape" value="none">
+                        <option value="none" selected="selected">none</option>
+                        <option value="circle">circle</option>
+                        <option value="square">square</option>
+                        <option value="triangle">triangle</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="backgroundShapeColor">Background Shape Color</label>
+                    <input type="color" name="" id="backgroundShapeColor" value="#8AB3FF">
+                </p>
+            </div>    
+            <div id="canvasText">
+                <p>
+                    <label for="textColor">Text Color</label>
+                    <input type="color" name="" id="textColor" value="#007bff">
+                </p>
+                <p>
+                    <label for="pickTweet">Pick Tweet</label>
+                    <select name="" id="pickTweet">
+                        <option value="This is by-defualt Tweet for Testing:)" selected="selected">This is by-defualt Tweet for Testing:)</option>
+                        <option value="This is second Tweet for Testing:">This is second Tweet for Testing:</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="twitterIcon">Twitter Icon</label>
+                    <input type="checkbox" name="" id="twitterIcon" checked>
+                </p>
+            </div>
+            <div id="exportFile">
+                <button id="exportButton">
+                    <a href="" id="exportLink" download type="button">
+                        <i class="fas fa-download fa-5x"></i>
+                    </a>
+                </button>
+            </div>
+        </div>
+        <!--Canvas Container-->
+        <div id="canvasDiv">
+            <div id="canvasWrapper">
+                <canvas id="myCanvas"></canvas>
+            </div>
+        </div>
+        <!--New File Dialog Box-->
+        <div id="whiteBackground">
+            <div id="newFileDialogBox">
+                <div id="dialogHeader">Select Shirt Size</div>
+                <div id="dialogBody">
+                    <p>
+                        <label for="shirtSize">Shirt Size</label>
+                        <select name="" id="shirtSize">
+                            <option value="xtra-small">xtra-small</option>
+                            <option value="small" selected="selected">small</option>
+                            <option value="large">large</option>
+                            <option value="xtra-large">xtra-large</option>
+                        </select>
+                    </p>
+                </div>
+                <div id="dialogFooter">
+                    <button id="createNewFileButton">Create</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

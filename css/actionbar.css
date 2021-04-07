@@ -1,0 +1,15 @@
+#actionbarDiv div {
+    padding: 0 8px 0 0;
+}
+#newFileButton {
+    background-color: none;
+    border: none;
+}
+.fa-file-image {
+    color: #343d46;
+    background-color: none;
+}
+.fa-file-image:hover {
+    color: blue;
+    background-color: #b6e5fc;
+}
