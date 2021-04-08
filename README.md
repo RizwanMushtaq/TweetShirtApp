@@ -1,6 +1,10 @@
 # TweetShirtApp
 User can perform following actions:
 * Create Canvas with desired size.
+    * Using templates
+    * Using Width and Height as Pixals
+    * Using Width and Height as cm.
+
 * Change Background Color of Canvas.
 * Draw background shapes in Canvas.
 * Write Text in Canvas.
