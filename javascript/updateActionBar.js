@@ -93,7 +93,7 @@ function drawMyObjectWithUpdates(){
 
     if(myFile.twitterIcon === true){
         let twitterIcon = new Image();
-        twitterIcon.src = 'twitterIcon64px.png';
+        twitterIcon.src = 'images/twitterIcon64px.png';
         twitterIcon.onload = function(){
             context.drawImage(twitterIcon, 10,10);
         }
