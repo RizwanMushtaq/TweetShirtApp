@@ -9,6 +9,7 @@
     opacity: 0.7;
     z-index: 1;
 }
+/*Dialog Box*/
 #newFileDialogBox {
     display: none;
     position: fixed;
@@ -17,6 +18,7 @@
     border-radius: 10px;
     background-color: #7c7d7e;
 }
+/*Dialog Header*/
 #dialogHeader {
     background-color: blue;
     color: white;
@@ -24,6 +26,7 @@
     padding: 10px;
     margin: 10px 10px 0px 10px;
 }
+/*Dialog Body*/
 #dialogBody {
     background-color: white;
     color: black;
@@ -31,6 +34,60 @@
     padding: 10px;
     margin: 0px 10px 0px 10px;
 }
+#dialogBody div {
+    margin: 0px 0px 0px 0px;
+}
+#dialogBodyRow1 {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    column-gap: 8px;
+    align-items: center;
+    padding: 0 0 8px 0;
+}
+#dialogIconContainer {
+    font-size:0;
+    display: flex;
+    align-items: center;
+    
+}
+#landscapeIcon, #potraitIcon {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#landscapeIcon {
+    margin-right: 1px;
+    border: 2px solid black;
+}
+.focusTweetPrintSizeIcon {
+    border: 2px solid black;
+}
+/*
+#dialogIconContainer div {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#landscapeIcon, #potraitIcon {
+    border: none;
+    padding: 8px;
+}
+*/
+
+#dialogBodyRow2, #dialogBodyRow3 {
+    height: 24px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    column-gap: 8px;
+    align-items: center;
+}
+/*Dialog Footer*/
 #dialogFooter {
     background-color: #f2f2f2;
     text-align: right;

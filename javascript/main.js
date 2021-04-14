@@ -1,8 +1,14 @@
 //selectors-----------------------------------------------------------------------------
 let newFileButton = document.getElementById("newFileButton");
-let createNewFileButton = document.getElementById("createNewFileButton");
 let exportButton = document.getElementById("exportButton");
 
+//NewFileDialog
+let createNewFileButton = document.getElementById("createNewFileButton");
+let cancelNewFileButton = document.getElementById("cancelNewFileButton");
+
+let dialogIconContainer = document.getElementById("dialogIconContainer");
+
+//ActionBar
 let backgroundColor = document.getElementById("backgroundColor");
 let backgroundShape = document.getElementById("backgroundShape");
 let backgroundShapeColor = document.getElementById("backgroundShapeColor");
@@ -18,11 +24,18 @@ window.onload = function() {
 }
 //This Event-Listner will show New File Dialog 
 newFileButton.addEventListener("click", showNewFileDialog);
-//This Event-Listner will create new Canvas 
-createNewFileButton.addEventListener("click", createNewCanvas);
 //This Event-Listner will export File
 exportButton.addEventListener("click", exportMyImage); 
-//User Updating Actionbar Values
+
+//NewFileDialog
+//This Event-Listner will create new Canvas 
+createNewFileButton.addEventListener("click", createNewCanvas);
+//This Event-Listner will cancel new Canvas 
+cancelNewFileButton.addEventListener("click", cancelNewCanvas);
+//This Event-Listner will update focus on the landscape or potrait Icon
+dialogIconContainer.addEventListener("click", updatedialogIcon);
+
+//ActionBar
 //This Event-Listner will update the background color of canvas
 backgroundColor.addEventListener("input", updateBackgroundColor); 
 //This Event-Listner will update the background shape of canvas

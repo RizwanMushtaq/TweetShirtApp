@@ -1,5 +1,10 @@
 //functions------------------------------------------------------------------------------
 
+//This function will cancel new Canvas Sheet
+function cancelNewCanvas(){
+    console.log("In Cancel New Canvas Function");
+    hideNewFileDialog();
+}
 //This function will create new Canvas Sheet
 function createNewCanvas(){
     console.log("In Create New Canvas Function");
@@ -49,6 +54,13 @@ function drawMyObject(){
         }
     }
     myCanvas.style.display = "block";
+
+
+    //reading canvas data
+    //var myImageData = context.createImageData(myCanvas.width,myCanvas.height);
+    console.log("my Image width: " + myCanvas.width);
+    console.log("my Image height: " + myCanvas.height);
+
 }
 //This function will save Object in Local Storage
 function saveMyObject(myFile){
@@ -70,13 +82,17 @@ function prepareMyObject(myFile){
     let twitterIcon = document.querySelector("#twitterIcon");
     myFile.twitterIcon = twitterIcon.checked;
 
+    setupCanvas(myFile);
+    /*
     //Reading File size
     let shirtSize = document.querySelector("#shirtSize");
     let shirtSizeValue = shirtSize.options[shirtSize.selectedIndex].value;
-    if(shirtSizeValue === "xtra-small"){
-        myFile.width = 500;
-        myFile.height = 150;
-    } else if(shirtSizeValue === "small"){
+    if(shirtSizeValue === "A1"){
+        myFile.width = fileSize.a1.width.mm;
+        myFile.height = fileSize.a1.height.mm;
+        
+    } 
+    else if(shirtSizeValue === "small"){
         myFile.width = 600;
         myFile.height = 200;
     } else if(shirtSizeValue === "large"){
@@ -86,7 +102,28 @@ function prepareMyObject(myFile){
         myFile.width = 800;
         myFile.height = 300;
     }
+    */
     return myFile;
+}
+//This function will setup values of canvas width and height
+function setupCanvas(myFile){
+    console.log("In setupCanvas function");
+    let shirtSize = document.querySelector("#shirtSize");
+    let shirtSizeValue = shirtSize.options[shirtSize.selectedIndex].value;
+    
+    let myCanvas = document.querySelector("#myCanvas");
+    var dpr = window.devicePixelRatio;
+    console.log(dpr);
+    //Formula to convert mm to pixels:  (pixels = dpi * mm / 25.4 mm) (pixels = dpi * cm / 2.54 cm)
+    let dpi = 96;
+    var rect = myCanvas.getBoundingClientRect();
+    console.log(rect);
+    
+    if(shirtSizeValue === "A5"){
+        myFile.width = Math.round((dpi * fileSize.a5.width.cm)/2.54);
+        myFile.height = Math.round((dpi * fileSize.a5.height.cm)/2.54);        
+    } 
+
 }
 //This function will reset all properties
 function resetInputProperties(){

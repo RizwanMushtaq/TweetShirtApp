@@ -19,11 +19,14 @@
     <link rel="stylesheet" href="css/actionbar.css">
     <link rel="stylesheet" href="css/newFileDialog.css">
     <!--Inserting js files-->
+    <script src="javascript/fileSize.js" defer></script>
     <script src="javascript/file.js" defer></script>
+    <script src="javascript/newFileDialog.js" defer></script>
     <script src="javascript/backgroundShapes.js" defer></script>
     <script src="javascript/mainCanvas.js" defer></script>
     <script src="javascript/updateActionBar.js" defer></script>
     <script src="javascript/main.js" defer></script>
+    
 </head>
 <body>
     <!--Wrapper Container-->
@@ -94,18 +97,41 @@
             <div id="newFileDialogBox">
                 <div id="dialogHeader">Select Shirt Size</div>
                 <div id="dialogBody">
-                    <p>
+                    <div id="dialogBodyRow1">
                         <label for="shirtSize">Shirt Size</label>
                         <select name="" id="shirtSize">
-                            <option value="xtra-small">xtra-small</option>
-                            <option value="small" selected="selected">small</option>
-                            <option value="large">large</option>
-                            <option value="xtra-large">xtra-large</option>
+                            <option value="A1">A1</option>
+                            <option value="A2">A2</option>
+                            <option value="A3">A3</option>
+                            <option value="A4">A4</option>
+                            <option value="A5" selected="selected">A5</option>
+                            <option value="A6">A6</option>
+                            <option value="A7">A7</option>
+                            <option value="Custom">Custom</option>
                         </select>
-                    </p>
+                        <div id="dialogIconContainer">
+                            <button id="landscapeIcon">
+                                <image id="landscapeIconImage" src="images/landscapeIcon.png"></image>
+                            </button>
+                            <button id="potraitIcon">
+                                <image id="potraitIconImage" src="images/potraitIcon.png"></image>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="dialogBodyRow2">
+                        <label for="shirtSizeWidth">Width</label>
+                        <input type="text" id="shirtSizeWidth">
+                        <label for="shirtSizeWidth">cm</label>
+                    </div>
+                    <div id="dialogBodyRow2">
+                        <label for="shirtSizeHeight">Height</label>
+                        <input type="text" id="shirtSizeHeight">
+                        <label for="shirtSizeWidth">cm</label>
+                    </div>
                 </div>
                 <div id="dialogFooter">
                     <button id="createNewFileButton">Create</button>
+                    <button id="cancelNewFileButton">Cancel</button>
                 </div>
             </div>
         </div>
