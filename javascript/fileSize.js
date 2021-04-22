@@ -1,5 +1,5 @@
 var fileSize = {
-    a1: {
+    A1: {
         width: {
             cm: 59.4,
         },
@@ -7,7 +7,7 @@ var fileSize = {
             cm: 84.1,
         }
     },
-    a2: {
+    A2: {
         width: {
             cm: 42.0,
         },
@@ -15,7 +15,7 @@ var fileSize = {
             cm: 59.4,
         }
     },
-    a3: {
+    A3: {
         width: {
             cm: 29.7,
         },
@@ -23,7 +23,7 @@ var fileSize = {
             cm: 42.0,
         }
     },
-    a4: {
+    A4: {
         width: {
             cm: 21.0,
         },
@@ -31,7 +31,7 @@ var fileSize = {
             cm: 29.7,
         }
     },
-    a5: {
+    A5: {
         width: {
             cm: 14.8,
         },
@@ -39,7 +39,7 @@ var fileSize = {
             cm: 21.0,
         }
     },
-    a6: {
+    A6: {
         width: {
             cm: 10.5,
         },
@@ -47,7 +47,7 @@ var fileSize = {
             cm: 14.8,
         }
     },
-    a7: {
+    A7: {
         width: {
             cm: 7.4,
         },

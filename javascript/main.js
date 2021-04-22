@@ -5,7 +5,7 @@ let exportButton = document.getElementById("exportButton");
 //NewFileDialog
 let createNewFileButton = document.getElementById("createNewFileButton");
 let cancelNewFileButton = document.getElementById("cancelNewFileButton");
-
+let shirtSize = document.querySelector("#shirtSize");
 let dialogIconContainer = document.getElementById("dialogIconContainer");
 
 //ActionBar
@@ -34,6 +34,8 @@ createNewFileButton.addEventListener("click", createNewCanvas);
 cancelNewFileButton.addEventListener("click", cancelNewCanvas);
 //This Event-Listner will update focus on the landscape or potrait Icon
 dialogIconContainer.addEventListener("click", updatedialogIcon);
+//Updating Print Size in drop down list
+shirtSize.addEventListener("change",updateSize);
 
 //ActionBar
 //This Event-Listner will update the background color of canvas

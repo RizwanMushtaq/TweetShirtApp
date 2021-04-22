@@ -88,15 +88,23 @@
         </div>
         <!--Canvas Container-->
         <div id="canvasDiv">
-            <div id="canvasWrapper">
-                <canvas id="myCanvas"></canvas>
-            </div>
+            <canvas id="myCanvas"></canvas>
         </div>
         <!--New File Dialog Box-->
         <div id="whiteBackground">
             <div id="newFileDialogBox">
                 <div id="dialogHeader">Select Shirt Size</div>
                 <div id="dialogBody">
+                    <div id="dialogBodyRow2">
+                        <label for="shirtSizeWidth">Width</label>
+                        <input type="number" required id="widthLabel" step="0.01" onblur="updateInputOnBlur()">
+                        <label for="shirtSizeWidth">cm</label>
+                    </div>
+                    <div id="dialogBodyRow2">
+                        <label for="shirtSizeHeight">Height</label>
+                        <input type="number" required id="heightLabel" step="0.01" onblur="updateInputOnBlur()">
+                        <label for="shirtSizeHeight">cm</label>
+                    </div>
                     <div id="dialogBodyRow1">
                         <label for="shirtSize">Shirt Size</label>
                         <select name="" id="shirtSize">
@@ -118,16 +126,7 @@
                             </button>
                         </div>
                     </div>
-                    <div id="dialogBodyRow2">
-                        <label for="shirtSizeWidth">Width</label>
-                        <input type="text" id="shirtSizeWidth">
-                        <label for="shirtSizeWidth">cm</label>
-                    </div>
-                    <div id="dialogBodyRow2">
-                        <label for="shirtSizeHeight">Height</label>
-                        <input type="text" id="shirtSizeHeight">
-                        <label for="shirtSizeWidth">cm</label>
-                    </div>
+                    
                 </div>
                 <div id="dialogFooter">
                     <button id="createNewFileButton">Create</button>

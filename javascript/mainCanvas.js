@@ -82,48 +82,33 @@ function prepareMyObject(myFile){
     let twitterIcon = document.querySelector("#twitterIcon");
     myFile.twitterIcon = twitterIcon.checked;
 
-    setupCanvas(myFile);
-    /*
-    //Reading File size
-    let shirtSize = document.querySelector("#shirtSize");
-    let shirtSizeValue = shirtSize.options[shirtSize.selectedIndex].value;
-    if(shirtSizeValue === "A1"){
-        myFile.width = fileSize.a1.width.mm;
-        myFile.height = fileSize.a1.height.mm;
-        
-    } 
-    else if(shirtSizeValue === "small"){
-        myFile.width = 600;
-        myFile.height = 200;
-    } else if(shirtSizeValue === "large"){
-        myFile.width = 700;
-        myFile.height = 250;
-    } else if(shirtSizeValue === "xtra-large"){
-        myFile.width = 800;
-        myFile.height = 300;
-    }
-    */
-    return myFile;
-}
-//This function will setup values of canvas width and height
-function setupCanvas(myFile){
-    console.log("In setupCanvas function");
-    let shirtSize = document.querySelector("#shirtSize");
-    let shirtSizeValue = shirtSize.options[shirtSize.selectedIndex].value;
-    
-    let myCanvas = document.querySelector("#myCanvas");
-    var dpr = window.devicePixelRatio;
-    console.log(dpr);
-    //Formula to convert mm to pixels:  (pixels = dpi * mm / 25.4 mm) (pixels = dpi * cm / 2.54 cm)
-    let dpi = 96;
-    var rect = myCanvas.getBoundingClientRect();
-    console.log(rect);
-    
-    if(shirtSizeValue === "A5"){
-        myFile.width = Math.round((dpi * fileSize.a5.width.cm)/2.54);
-        myFile.height = Math.round((dpi * fileSize.a5.height.cm)/2.54);        
-    } 
+/*    
+dpi is the pixel density or dots per inch.
+96 dpi means there are 96 pixels per inch.
+1 inch is equal to 2.54 centimeters.
 
+1 inch = 2.54 cm
+dpi = 96 px / in
+96 px / 2.54 cm
+
+Therefore one centimeter is equal to
+1 cm = 96 px / 2.54
+1 cm = 37.79527559055118 px
+
+If we round the pixel value, we get
+1 cm = 38 px for 96 dpi.
+*/
+    let widthLabel = document.querySelector("#widthLabel");
+    let heightLabel = document.querySelector("#heightLabel");
+    console.log(widthLabel.value + "and " + heightLabel.value);
+    let dpi = 96;
+    let widthPixal = Math.round((96/2.54) * parseInt(widthLabel.value)); 
+    let heightPixal = Math.round((96/2.54) * parseInt(heightLabel.value));
+    myFile.width = widthPixal;
+    myFile.height = heightPixal;
+    console.log(widthPixal + "and " + heightPixal);
+    
+    return myFile;
 }
 //This function will reset all properties
 function resetInputProperties(){
@@ -159,6 +144,17 @@ function showNewFileDialog(){
 
     newFileDialogBox.style.left = (winWidth/2)- 480/2 + "px";
     newFileDialogBox.style.top = "150px";
+
+    let shirtSize = document.querySelector("#shirtSize").options[document.querySelector("#shirtSize").selectedIndex].value;
+    let landscapeIconStyle = getComputedStyle(document.getElementById("landscapeIcon"));
+    let potraitIconStyle = getComputedStyle(document.getElementById("potraitIcon"));
+    let widthLabel = document.querySelector("#widthLabel");
+    let heightLabel = document.querySelector("#heightLabel");
+    //Setting default values of Dialog Box
+    if(shirtSize === "A5" && landscapeIconStyle.border === "2px solid rgb(0, 0, 0)" && potraitIconStyle.border === "0px none rgb(0, 0, 0)"){
+        widthLabel.value = fileSize.A5.height.cm;
+        heightLabel.value = fileSize.A5.width.cm;
+    }
 }
 //Disable Action Bar before creation any canvas
 function diableActionBar() {
