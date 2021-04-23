@@ -1,4 +1,4 @@
-# TweetShirtApp
+# PrintTweetApp
 User can perform following actions:
 * Create Canvas with desired size.
     * Using templates
