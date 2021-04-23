@@ -101,9 +101,9 @@ If we round the pixel value, we get
     let widthLabel = document.querySelector("#widthLabel");
     let heightLabel = document.querySelector("#heightLabel");
     console.log(widthLabel.value + "and " + heightLabel.value);
-    let dpi = 96;
-    let widthPixal = Math.round((96/2.54) * parseInt(widthLabel.value)); 
-    let heightPixal = Math.round((96/2.54) * parseInt(heightLabel.value));
+    let dpi = 96; //let dots per pixal value
+    let widthPixal = Math.round((96/2.54) * parseFloat(widthLabel.value)); 
+    let heightPixal = Math.round((96/2.54) * parseFloat(heightLabel.value));
     myFile.width = widthPixal;
     myFile.height = heightPixal;
     console.log(widthPixal + "and " + heightPixal);
